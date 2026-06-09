@@ -1,0 +1,5 @@
+#define IDD_MAIN_DIALOG     101
+#define IDC_BUTTON_TOOLS    1001
+#define IDC_BUTTON_MOVE     1002
+#define IDC_BUTTON_CLOSE    1003
+#define IDC_COMBO_OPTIONS   1004

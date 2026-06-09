@@ -1,0 +1,87 @@
+﻿  pch.cpp
+  dllmain.cpp
+  PluginDialog.cpp
+  SimplePlugin.cpp
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.h(4,30): error C2504: 'CDialogEx': taban sınıf tanımsız
+  Kod Üretiliyor...
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.h(21,5): error C3668: 'CPluginDialog::GetMessageMap': 'override' geçersiz kılma belirticisi olan yöntem hiçbir taban sınıf yöntemini geçersiz kılmadı
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(4,1): error C2653: 'CDialogEx': bir sınıf veya ad alanı adı değil
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(7,7): error C2614: 'CPluginDialog': geçersiz üye başlatma: 'CDialogEx' bir taban veya üye değil
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(17,5): error C2653: 'CDialogEx': bir sınıf veya ad alanı adı değil
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(22,1): error C4430: tür belirticisi eksik - int varsayıldı. Not: C++ varsayılan int desteği içermez
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(22,1): error C2146: sözdizimi hatası: ';' eksik ('TheBaseClass' tanımlayıcısından önce)
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(22,1): error C2065: 'TheBaseClass': bildirimi yapılmamış tanımlayıcı
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(23,5): error C2440: 'static_cast': 'void (__cdecl CPluginDialog::* )(void)' - 'AFX_PMSG' dönüşümü yapılamıyor
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+      C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(23,5):
+      İşaretlenen türler ilgisiz; dönüştürme reinterpret_cast, C stili tür dönüştürme veya parantez içine alınmış işlev stili tür dönüştürme gerektiriyor
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(24,5): error C2440: 'static_cast': 'void (__cdecl CPluginDialog::* )(void)' - 'AFX_PMSG' dönüşümü yapılamıyor
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+      C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(24,5):
+      İşaretlenen türler ilgisiz; dönüştürme reinterpret_cast, C stili tür dönüştürme veya parantez içine alınmış işlev stili tür dönüştürme gerektiriyor
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(22,1): error C2737: '_messageEntries': const nesnesinin başlatılması gerekiyor
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(25,1): error C2653: 'TheBaseClass': bir sınıf veya ad alanı adı değil
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(25,1): error C2737: 'messageMap': const nesnesinin başlatılması gerekiyor
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(29,5): error C2653: 'CDialogEx': bir sınıf veya ad alanı adı değil
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(33,5): error C3861: 'UpdateData': tanımlayıcı bulunamadı
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(40,5): error C3861: 'UpdateData': tanımlayıcı bulunamadı
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(46,5): error C2660: 'MessageBoxW': işlev 3 bağımsız değişken almıyor
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winuser.h(9235,1):
+      'MessageBoxW' bildirimine bakın
+      C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(46,5):
+      '(CString, const wchar_t [6], long)' bağımsız değişken listesi eşlenmeye çalışılırken
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(48,5): error C2653: 'CDialogEx': bir sınıf veya ad alanı adı değil
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(48,16): error C3861: 'OnOK': tanımlayıcı bulunamadı
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(53,5): error C2653: 'CDialogEx': bir sınıf veya ad alanı adı değil
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.cpp(53,16): error C3861: 'OnCancel': tanımlayıcı bulunamadı
+  ('/PluginDialog.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.h(4,30): error C2504: 'CDialogEx': taban sınıf tanımsız
+  ('/SimplePlugin.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.h(21,5): error C3668: 'CPluginDialog::GetMessageMap': 'override' geçersiz kılma belirticisi olan yöntem hiçbir taban sınıf yöntemini geçersiz kılmadı
+  ('/SimplePlugin.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\Desen2\Desktop\CorelDraw_Plugin\SimplePlugin.cpp(25,9): error C2039: 'DoModal': bir 'CPluginDialog' üyesi değil
+  ('/SimplePlugin.cpp' kaynak dosyası derleniyor)
+      C:\Users\Desen2\Desktop\CorelDraw_Plugin\PluginDialog.h(4,7):
+      'CPluginDialog' bildirimine bakın
+  

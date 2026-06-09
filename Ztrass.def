@@ -1,0 +1,7 @@
+LIBRARY "Ztrass"
+EXPORTS
+    GetPluginVersion
+    GetPluginName
+    AttachPlugin
+    DetachPlugin
+    TriggerSearchDialog

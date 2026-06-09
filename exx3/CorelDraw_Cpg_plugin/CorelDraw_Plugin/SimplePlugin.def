@@ -1,0 +1,7 @@
+LIBRARY "SimplePlugin"
+
+EXPORTS
+    CPGPlugInInfo
+    CPGPlugInVersion
+    CPGPlugInCommand
+    CPGPlugInHelp

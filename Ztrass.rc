@@ -1,0 +1,274 @@
+﻿// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+#include <windows.h>
+#include <commctrl.h>
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef IDC_STATIC
+#define IDC_STATIC          -1
+#endif
+#define DS_SETFONT          0x40L
+#define DS_FIXEDSYS         0x0008L
+#define WS_POPUP            0x80000000L
+#define WS_CHILD            0x40000000L
+#define WS_CAPTION          0x00C00000L
+#define WS_SYSMENU          0x00080000L
+#define WS_THICKFRAME       0x00040000L
+#define WS_TABSTOP          0x00010000L
+#define WS_GROUP            0x00020000L
+#define BS_AUTOCHECKBOX     0x00000003L
+#define BS_AUTORADIOBUTTON  0x00000009L
+#define SS_ICON             0x00000003L
+#define WS_BORDER           0x00800000L
+#define ES_AUTOHSCROLL      0x0080L
+#define WS_MINIMIZEBOX      0x00020000L
+#define WS_MAXIMIZEBOX      0x00010000L
+#define DS_SHELLFONT        (DS_SETFONT | DS_FIXEDSYS)
+#define LANG_TURKISH        0x1f
+#define CBS_DROPDOWN        0x0002L
+#define WS_VSCROLL          0x00200000L
+#define SUBLANG_DEFAULT     0x01
+#ifndef WS_EX_LEFT
+#define WS_EX_LEFT          0x00000000L
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Türkçe (Türkiye) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_TRK)
+LANGUAGE LANG_TURKISH, SUBLANG_DEFAULT
+#pragma code_page(65001)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_SIZE           ICON                    "size.ico"
+
+IDI_ICON_COLOR          ICON                    "color.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEARCH_DLG DIALOGEX 0, 0, 750, 314
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ztrass.com"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Ara (Ctrl+F)",IDC_GRP_ARA,6,6,190,48
+    CONTROL         "Ölçü",IDC_CHK_OLCU,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,16,28,10
+    PUSHBUTTON      "=",IDC_BTN_OLCU_OP,38,15,15,11
+    CONTROL         "Kontür Ölçü",IDC_CHK_KONTUR_OLCU,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,65,16,50,10
+    CONTROL         "Tür",IDC_CHK_TUR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,120,16,25,10
+    PUSHBUTTON      "Ara",IDC_BTN_ARA,155,14,35,13
+    CONTROL         "İç Renk",IDC_CHK_IC_RENK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,28,45,10
+    CONTROL         "Kontür Renk",IDC_CHK_KONTUR_RENK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,65,28,50,10
+    CONTROL         "Grup İçi",IDC_CHK_GRUP_ICI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,120,28,40,10
+    CONTROL         "Düğüm Sayısı",IDC_CHK_NODE_COUNT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,40,52,10
+    CONTROL         "Aktif Katman",IDC_CHK_ACTIVE_LAYER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,65,40,50,10
+    CONTROL         "Alt Yol Sayısı",IDC_CHK_SUBPATH_COUNT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,120,40,55,10
+    GROUPBOX        "Ölçü",IDC_GRP_OLCU,6,56,190,42
+    LTEXT           "En",IDC_STATIC,12,68,12,8
+    EDITTEXT        IDC_EDT_EN,26,66,30,12,ES_AUTOHSCROLL
+    LTEXT           "Boy",IDC_STATIC,62,68,15,8
+    EDITTEXT        IDC_EDT_BOY,79,66,30,12,ES_AUTOHSCROLL
+    CONTROL         "O",IDC_CHK_OLCU2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,114,67,20,10
+    PUSHBUTTON      "Ölçü",IDC_BTN_ARA2,137,66,53,12
+    PUSHBUTTON      "2",IDC_BTN_OLCU_1,12,82,20,12
+    PUSHBUTTON      "2.1",IDC_BTN_OLCU_2,35,82,20,12
+    PUSHBUTTON      "2.15",IDC_BTN_OLCU_3,57,82,20,12
+    PUSHBUTTON      "3",IDC_BTN_OLCU_4,80,82,20,12
+    PUSHBUTTON      "3.1",IDC_BTN_OLCU_5,102,82,20,12
+    PUSHBUTTON      "3.15",IDC_BTN_OLCU_6,125,82,20,12
+    GROUPBOX        "Lazer Kontrol",IDC_GRP_KESISEN,6,102,190,42
+    LTEXT           "Tolerans",IDC_STATIC,12,114,30,8
+    EDITTEXT        IDC_EDT_TOLERANCE,44,112,20,12,ES_AUTOHSCROLL
+    CONTROL         "Seç",IDC_RAD_SELECT,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,69,113,23,10
+    CONTROL         "Sil",IDC_RAD_DELETE,"Button",BS_AUTORADIOBUTTON,94,113,20,10
+    CONTROL         "Ortala",IDC_RAD_CENTER,"Button",BS_AUTORADIOBUTTON,117,113,33,10
+    PUSHBUTTON      "Bul",IDC_BTN_FIND,157,112,32,12
+    CONTROL         "Üst",IDC_CHK_TOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,129,28,10
+    CONTROL         "Alt",IDC_CHK_BOTTOM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,44,129,28,10
+    CONTROL         "Aynı",IDC_CHK_SAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,129,30,10
+    PUSHBUTTON      "Seç",IDC_BTN_SELECT_MATCH,157,128,32,12
+    GROUPBOX        "PLt Dxf Export",IDC_GRP_EXPORT,6,148,95,27
+    CONTROL         "Jpg",IDC_CHK_OLCU3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,157,25,10
+    CONTROL         "Ayır",IDC_CHK_OLCU4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,157,25,10
+    PUSHBUTTON      "Export",IDC_BTN_ARA11,64,156,32,12
+    CONTROL         "Kalıp",IDC_CHK_KALIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,150,35,10
+    CONTROL         "Hesap",IDC_CHK_HESAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,162,38,10
+    CONTROL         "Ztrass",IDC_CHK_ZTRASS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,146,150,38,10
+    PUSHBUTTON      "Liste",IDC_BTN_LIST,146,161,28,12
+    CONTROL         "",IDC_CHK_LIST_OPTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,176,162,10,10
+    GROUPBOX        "Liste",IDC_GRP_LISTE,6,179,218,48
+    PUSHBUTTON      "-----",IDC_BTN_simge,198,10,27,12
+    PUSHBUTTON      "K>B",IDC_BTN_ARA5,198,24,27,12
+    PUSHBUTTON      "B>K",IDC_BTN_ARA6,198,38,27,12
+    PUSHBUTTON      "Açı",IDC_BTN_ARA7,198,52,27,12
+    PUSHBUTTON      "A4",IDC_BTN_ARA8,198,66,27,12
+    PUSHBUTTON      "A5",IDC_BTN_ARA9,198,80,27,12
+    PUSHBUTTON      "A6",IDC_BTN_ARA10,198,94,27,12
+    PUSHBUTTON      "A7",IDC_BTN_ARA12,198,108,27,12
+    PUSHBUTTON      "A8",IDC_BTN_ARA13,198,122,27,12
+    PUSHBUTTON      "A9",IDC_BTN_ARA14,198,136,27,12
+    GROUPBOX        "Kalıp İşlemleri",IDC_GRP_KALIP_BILGI,237,6,99,148
+    LTEXT           "Firma",IDC_STATIC,242,17,22,8
+    COMBOBOX        IDC_EDT_FIRMA,266,15,64,150,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dosya",IDC_STATIC,242,30,22,8
+    EDITTEXT        IDC_EDT_DOSYA,266,28,64,12,ES_AUTOHSCROLL
+    LTEXT           "Kalıp",IDC_STATIC,242,43,22,8
+    EDITTEXT        IDC_EDT_KALIP_ADI,266,41,64,12,ES_AUTOHSCROLL
+    LTEXT           "Pres",IDC_STATIC,242,56,16,8
+    EDITTEXT        IDC_EDT_PRES,260,54,20,12,ES_AUTOHSCROLL
+    LTEXT           "K . İş",IDC_STATIC,242,69,16,8
+    EDITTEXT        IDC_EDT_MONTAJ,306,54,24,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Bilgi Ekle",IDC_BTN_BILGI_EKLE,242,83,88,14
+    LTEXT           "Montaj",IDC_STATIC,282,56,22,8
+    EDITTEXT        IDC_EDT_KALIPTA_IS,260,67,20,12,ES_AUTOHSCROLL
+    LTEXT           "Toplam ",IDC_STATIC,282,69,22,8
+    EDITTEXT        IDC_EDT_TOPLAM_IS,306,67,24,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "İşaret Taşı",IDC_BTN_KALIP_EKLE,242,101,54,12
+    EDITTEXT        IDC_EDT_KALIP_OLCU,298,101,18,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,318,103,12,8
+    LTEXT           "Kalip:",IDC_STATIC,242,117,20,8
+    PUSHBUTTON      "Num.",IDC_BTN_ISARET_TASI,264,115,22,12
+    PUSHBUTTON      "Imalat",IDC_BTN_IMALAT,288,115,26,12
+    EDITTEXT        IDC_EDT_TASI_OLCU,316,115,12,12,ES_AUTOHSCROLL
+    LTEXT           "mm",IDC_STATIC,330,117,8,8
+    PUSHBUTTON      "Kalıp Ayır",IDC_BTN_KALIP_AYIR,242,129,88,12
+    PUSHBUTTON      "Makine Kalıbı Hazırla",IDC_BTN_MAKINE_KALIBI,242,143,72,12
+    LTEXT           "1mm",IDC_STATIC,347,19,16,8
+    EDITTEXT        IDC_EDT_2MM,371,17,24,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "?",IDC_BTN_MAKINE_KALIBI2,316,143,14,12
+    LTEXT           "2mm",IDC_STATIC,347,33,16,8
+    EDITTEXT        IDC_EDT_2MM2,371,31,24,12,ES_AUTOHSCROLL
+    LTEXT           "3mm",IDC_STATIC,347,47,16,8
+    EDITTEXT        IDC_EDT_2MM3,371,45,24,12,ES_AUTOHSCROLL
+    LTEXT           "4mm",IDC_STATIC,347,61,16,8
+    EDITTEXT        IDC_EDT_2MM4,371,59,24,12,ES_AUTOHSCROLL
+    LTEXT           "5mm",IDC_STATIC,347,75,16,8
+    EDITTEXT        IDC_EDT_2MM5,371,73,24,12,ES_AUTOHSCROLL
+    LTEXT           "6mm",IDC_STATIC,347,89,16,8
+    EDITTEXT        IDC_EDT_2MM6,371,87,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_2MM7,371,101,24,12,ES_AUTOHSCROLL
+    LTEXT           "7mm",IDC_STATIC,347,103,16,8
+    GROUPBOX        "Makine Kalıbı Ölçüleri",IDC_GRP_KALIP_DUZENLE_AYAR2,342,6,99,113
+    PUSHBUTTON      "Kaydet",IDC_BTN_MAKINE_KALIBI3,396,100,40,12
+    PUSHBUTTON      "X",IDC_BTN_MAKINE_KALIBI4,420,17,16,12
+    PUSHBUTTON      "Sıfırla",IDC_BTN_MAKINE_KALIBI5,396,87,40,12
+    PUSHBUTTON      "0.4",IDC_BTN_OLCU_7,147,82,20,12
+    PUSHBUTTON      "0.6",IDC_BTN_OLCU_8,170,82,20,12
+    EDITTEXT        IDC_cikti,114,126,36,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_LIST_HESAP,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,636,6,104,162
+    PUSHBUTTON      "Hesapla",IDC_BTN_HESAPLA,690,174,50,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef IDC_STATIC\r\n"
+    "#define IDC_STATIC          -1\r\n"
+    "#endif\r\n"
+    "#define DS_SETFONT          0x40L\r\n"
+    "#define DS_FIXEDSYS         0x0008L\r\n"
+    "#define WS_POPUP            0x80000000L\r\n"
+    "#define WS_CHILD            0x40000000L\r\n"
+    "#define WS_CAPTION          0x00C00000L\r\n"
+    "#define WS_SYSMENU          0x00080000L\r\n"
+    "#define WS_THICKFRAME       0x00040000L\r\n"
+    "#define WS_TABSTOP          0x00010000L\r\n"
+    "#define WS_GROUP            0x00020000L\r\n"
+    "#define BS_AUTOCHECKBOX     0x00000003L\r\n"
+    "#define BS_AUTORADIOBUTTON  0x00000009L\r\n"
+    "#define SS_ICON             0x00000003L\r\n"
+    "#define WS_BORDER           0x00800000L\r\n"
+    "#define ES_AUTOHSCROLL      0x0080L\r\n"
+    "#define WS_MINIMIZEBOX      0x00020000L\r\n"
+    "#define WS_MAXIMIZEBOX      0x00010000L\r\n"
+    "#define DS_SHELLFONT        (DS_SETFONT | DS_FIXEDSYS)\r\n"
+    "#define LANG_TURKISH        0x1f\r\n"
+    "#define CBS_DROPDOWN        0x0002L\r\n"
+    "#define WS_VSCROLL          0x00200000L\r\n"
+    "#define SUBLANG_DEFAULT     0x01\r\n"
+    "#ifndef WS_EX_LEFT\r\n"
+    "#define WS_EX_LEFT          0x00000000L\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SEARCH_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 566
+        BOTTOMMARGIN, 309
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_SEARCH_DLG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // Türkçe (Türkiye) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

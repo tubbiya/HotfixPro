@@ -1,0 +1,20 @@
+//  1- A program that will copy a selected object 1000 times
+bool Copy_1K_Objects(corel *cdr)
+{
+  auto sr = cdr->ActiveSelectionRange; // Get the selection range
+  double sw = sr->SizeWidth;
+  double sh = sr->SizeHeight;
+  int n = 10;
+  auto dup = sr->StepAndRepeat(n - 1, sw, 0.0, cdrModeOffset, cdrRight, cdrModeOffset, cdrDown);
+  sr->AddRange(dup);
+  auto dup_all = sr->StepAndRepeat(n - 1, 0.0, sh, cdrModeOffset, cdrRight, cdrModeOffset, cdrDown);
+  sr->AddRange(dup_all);
+
+  return true;
+}
+
+/***********   MSVC2022 compiles CorelDRAW CPG.exe command line syntax
+
+cl.exe /nologo /utf-8 /w /EHsc /Ox /DNDEBUG /MD app.cpp cpg.cpp  /link  rpcrt4.lib msvcrt.lib shell32.lib user32.lib gdi32.lib
+
+***********/

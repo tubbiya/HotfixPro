@@ -1,0 +1,660 @@
+﻿[30.05.2026 09:43:14.951] =========================================================
+[30.05.2026 09:43:14.952] [TEST] COM Baglantisi ve Metot/Ozellik Testi Baslatildi.
+[30.05.2026 09:43:14.971] [TEST] 1. m_pApp basariyla alindi.
+[30.05.2026 09:43:14.986] [TEST] 2. ActiveDocument basariyla alindi.
+[30.05.2026 09:43:15.001] [TEST] [UYARI] ActiveShape NULL (Nesne secili olmayabilir).
+[30.05.2026 09:43:15.017] [TEST] 4a. pDoc->Selection deneniyor...
+[30.05.2026 09:43:15.034] [HATA] GetDispatchProp: Invoke (PROPERTYGET) basarisiz! (Prop: Selection, hr: 0x80020003)
+[30.05.2026 09:43:15.049] [TEST] 4a. pDoc->Selection basarisiz.
+[30.05.2026 09:43:15.067] [TEST] 4b. pDoc->ActiveSelection deneniyor...
+[30.05.2026 09:43:15.082] [HATA] GetDispatchProp: GetIDsOfNames basarisiz! (Prop: ActiveSelection, hr: 0x80020006)
+[30.05.2026 09:43:15.104] [TEST] 4b. pDoc->ActiveSelection basarisiz.
+[30.05.2026 09:43:15.118] [TEST] 4c. m_pApp->ActiveSelection deneniyor...
+[30.05.2026 09:43:15.135] [TEST] 4c. m_pApp->ActiveSelection BASARILI.
+[30.05.2026 09:43:15.149] [TEST] 4d. pDoc->ActiveSelectionRange deneniyor...
+[30.05.2026 09:43:15.165] [HATA] GetDispatchProp: GetIDsOfNames basarisiz! (Prop: ActiveSelectionRange, hr: 0x80020006)
+[30.05.2026 09:43:15.185] [TEST] 4d. pDoc->ActiveSelectionRange basarisiz.
+[30.05.2026 09:43:15.204] [TEST] 4e. m_pApp->ActiveSelectionRange deneniyor...
+[30.05.2026 09:43:15.221] [TEST] 4e. m_pApp->ActiveSelectionRange BASARILI.
+[30.05.2026 09:43:15.242] [TEST] 5a. m_pApp->Evaluate (Basit CQL) deneniyor...
+[30.05.2026 09:43:15.258] [TEST] Evaluate->Evaluate cagrisi basarisiz! hr: 0x80020009
+[30.05.2026 09:43:15.274] [TEST] EXCEPINFO Source: Application
+[30.05.2026 09:43:15.298] [TEST] EXCEPINFO Description: Invalid use of '@type' in the current context at position 1
+[30.05.2026 09:43:15.320] [TEST] EXCEPINFO wCode: 0, scode: 0x80004005
+[30.05.2026 09:43:15.342] [TEST] 5b. pDoc->Evaluate (Basit CQL) deneniyor...
+[30.05.2026 09:43:15.357] [TEST] Evaluate GetIDsOfNames (Evaluate) basarisiz! hr: 0x80020006
+[30.05.2026 09:43:15.378] [TEST] 6. ActivePage alindi.
+[30.05.2026 09:43:15.399] [TEST] 6. ActivePage.Shapes alindi.
+[30.05.2026 09:43:15.416] [TEST] COM Testi Tamamlandi.
+[30.05.2026 09:43:20.976] =========================================================
+[30.05.2026 09:43:20.977] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:43:20.994] [BILGI] Secimler -> m_bOlcu: 1, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 09:43:21.013] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:43:21.033] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.133345 and @width < 0.138065) and (@type <> 'group')
+[30.05.2026 09:43:21.047] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.133345 and @width < 0.138065) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:43:21.068] [BILGI] Arama Tamamlandi! Sorgu: (@width > 0.133345 and @width < 0.138065) and (@type <> 'group')
+[30.05.2026 09:43:21.084] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:43:21.103] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:43:21.121] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:43:21.145] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:43:21.163] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 24
+[30.05.2026 09:43:27.869] =========================================================
+[30.05.2026 09:43:27.871] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:43:27.888] [BILGI] Secimler -> m_bOlcu: 1, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 09:43:27.910] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:43:27.934] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 09:43:27.959] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:43:27.978] [BILGI] Arama Tamamlandi! Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 09:43:27.996] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:43:28.014] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:43:28.033] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:43:28.050] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:43:28.067] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 24
+[30.05.2026 09:43:28.084] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 11
+[30.05.2026 09:43:28.102] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 09:43:34.572] =========================================================
+[30.05.2026 09:43:34.573] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:43:34.590] [BILGI] Secimler -> m_bOlcu: 1, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 09:43:34.607] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:43:34.625] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 09:43:34.641] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:43:34.660] [BILGI] Arama Tamamlandi! Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 09:43:34.677] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:43:34.696] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:43:34.715] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:43:34.733] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:43:34.750] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 24
+[30.05.2026 09:43:34.768] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 11
+[30.05.2026 09:43:34.784] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 09:43:41.519] =========================================================
+[30.05.2026 09:43:41.521] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:43:41.539] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 1, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 09:43:41.557] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:43:41.575] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:41.597] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:41.615] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:41.633] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@fill.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:43:41.649] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@fill.color = RGB(0, 0, 0)) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:43:41.666] [BILGI] Arama Tamamlandi! Sorgu: (@fill.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:43:41.682] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:43:41.700] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:43:41.721] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:43:41.739] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:43:41.756] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 24
+[30.05.2026 09:43:41.783] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:41.799] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:41.817] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:41.837] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:41.858] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:41.878] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:41.897] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:41.915] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:41.933] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:41.948] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:41.968] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:41.985] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.006] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.029] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.048] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.074] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.095] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.112] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.130] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.146] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.168] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.185] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.202] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.219] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.237] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.258] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.274] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.291] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.311] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.330] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.346] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.363] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.380] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.398] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.415] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.431] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.449] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.468] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.486] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.505] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.524] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.542] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.559] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.583] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.603] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.620] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.640] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.658] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.680] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.697] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.720] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.738] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.758] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.776] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.794] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.812] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.831] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.851] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.870] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:42.886] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:43:42.904] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:43:42.921] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:43:51.336] =========================================================
+[30.05.2026 09:43:51.337] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:43:51.354] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 1, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 09:43:51.371] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:43:51.389] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@outline.width = 0.007874) and (@type <> 'group')
+[30.05.2026 09:43:51.406] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@outline.width = 0.007874) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:43:51.425] [BILGI] Arama Tamamlandi! Sorgu: (@outline.width = 0.007874) and (@type <> 'group')
+[30.05.2026 09:43:51.441] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:43:51.459] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:43:51.476] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:43:51.496] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:43:51.513] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 24
+[30.05.2026 09:43:51.532] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 23
+[30.05.2026 09:43:51.549] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 09:43:59.568] =========================================================
+[30.05.2026 09:43:59.569] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:43:59.587] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 1, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 09:43:59.604] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:43:59.623] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@outline.width = 0.007874) and (@type <> 'group')
+[30.05.2026 09:43:59.640] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@outline.width = 0.007874) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:43:59.657] [BILGI] Arama Tamamlandi! Sorgu: (@outline.width = 0.007874) and (@type <> 'group')
+[30.05.2026 09:43:59.674] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:43:59.694] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:43:59.712] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:43:59.730] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:43:59.747] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 24
+[30.05.2026 09:43:59.765] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 23
+[30.05.2026 09:43:59.781] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 09:44:04.878] =========================================================
+[30.05.2026 09:44:04.879] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:44:04.896] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 1, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 09:44:04.912] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:44:04.932] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@outline.width = 0.007874) and (@type <> 'group')
+[30.05.2026 09:44:04.955] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@outline.width = 0.007874) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:44:04.972] [BILGI] Arama Tamamlandi! Sorgu: (@outline.width = 0.007874) and (@type <> 'group')
+[30.05.2026 09:44:04.993] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:44:05.012] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:44:20.262] =========================================================
+[30.05.2026 09:44:20.263] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:44:20.284] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 1, m_bGrupIci: 0, Op: =
+[30.05.2026 09:44:20.301] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:44:20.320] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.338] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.355] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.374] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:44:20.399] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:44:20.430] [BILGI] Arama Tamamlandi! Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:44:20.450] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:44:20.469] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:44:20.486] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:44:20.503] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:44:20.520] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 25
+[30.05.2026 09:44:20.544] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.563] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.579] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.597] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.615] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.633] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.651] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.667] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.684] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.700] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.720] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.735] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.758] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.774] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.794] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.811] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.828] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.843] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.862] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.879] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.897] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.915] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.933] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:20.953] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:20.971] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:20.993] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.017] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.040] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.060] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.078] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.095] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.112] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.131] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.147] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.164] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.190] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.207] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.226] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.244] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.260] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.276] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.292] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.311] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.329] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.351] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.369] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.387] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.413] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.438] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.462] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.483] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.499] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.520] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.536] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.555] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.573] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.591] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.609] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.629] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.647] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.665] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.682] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.700] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.717] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.734] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.754] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.772] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.795] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.814] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.831] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.851] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.867] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.884] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.900] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.921] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.939] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:21.958] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:21.975] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:21.995] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.020] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.037] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.058] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.075] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.094] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.112] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.129] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.148] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.174] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.193] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.216] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.233] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.252] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.269] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.287] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.304] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.325] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.343] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.360] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.380] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.400] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.425] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.450] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.471] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.490] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.507] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.526] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.543] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.562] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.580] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.598] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.617] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.634] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.653] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.679] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.697] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.716] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.733] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.749] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.765] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.783] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.799] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.818] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.836] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.854] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.876] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.897] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.921] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.940] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:22.958] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:22.977] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:22.995] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:23.014] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:23.030] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:23.048] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:23.067] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:23.086] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:23.102] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:23.121] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:23.139] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:23.156] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:23.172] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:23.190] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:23.208] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:23.226] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:23.244] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 24
+[30.05.2026 09:44:23.261] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 09:44:25.100] =========================================================
+[30.05.2026 09:44:25.101] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:44:25.120] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 1, m_bGrupIci: 0, Op: =
+[30.05.2026 09:44:25.142] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:44:25.160] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:25.177] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:25.193] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:25.210] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:44:25.226] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:44:25.246] [BILGI] Arama Tamamlandi! Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:44:25.264] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:44:25.281] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:44:25.298] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:44:25.316] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:44:25.333] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 25
+[30.05.2026 09:44:25.352] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:25.367] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:25.385] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:25.405] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:25.423] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:25.448] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:25.472] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:25.496] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:25.513] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:25.530] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:25.550] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:25.568] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:25.661] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:25.662] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:25.680] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 24
+[30.05.2026 09:44:25.697] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 09:44:32.998] =========================================================
+[30.05.2026 09:44:32.999] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 09:44:33.017] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 1, m_bGrupIci: 0, Op: =
+[30.05.2026 09:44:33.034] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 09:44:33.052] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:33.071] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:33.090] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:33.107] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:44:33.124] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 09:44:33.141] [BILGI] Arama Tamamlandi! Sorgu: (@outline.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 09:44:33.159] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 09:44:33.177] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 09:44:33.193] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi.
+[30.05.2026 09:44:33.212] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 09:44:33.230] [BILGI] SearchByCOMScan: Sayfadaki toplam sekil sayisi: 25
+[30.05.2026 09:44:33.247] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:33.263] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:33.280] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:33.297] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:33.320] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:33.337] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:33.357] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:33.375] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:33.468] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 09:44:33.468] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 09:44:33.492] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 09:44:33.511] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 24
+[30.05.2026 09:44:33.537] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 10:01:17.019] =========================================================
+[30.05.2026 10:01:17.020] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 10:01:17.039] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 1, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 10:01:17.057] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 10:01:17.075] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.097] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.115] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.132] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@fill.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 10:01:17.151] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@fill.color = RGB(0, 0, 0)) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 10:01:17.167] [BILGI] Arama Tamamlandi! Sorgu: (@fill.color = RGB(0, 0, 0)) and (@type <> 'group')
+[30.05.2026 10:01:17.187] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 10:01:17.209] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 10:01:17.226] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi. AktifKatman: 0
+[30.05.2026 10:01:17.246] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 10:01:17.272] [BILGI] SearchByCOMScan: Taranacak toplam sekil sayisi: 24
+[30.05.2026 10:01:17.296] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.314] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.335] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.359] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.378] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.399] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.419] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.443] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.461] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.482] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.502] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.517] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.537] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.554] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.577] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.595] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.612] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.629] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.646] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.664] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.681] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.698] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.720] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.737] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.754] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.773] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.797] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.817] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.842] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.871] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.898] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.922] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.940] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:17.956] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:17.977] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:17.996] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.014] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.031] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.051] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.071] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.096] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.112] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.131] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.149] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.170] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.188] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.210] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.228] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.246] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.265] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.286] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.311] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.329] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.346] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.364] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.383] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.405] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.431] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.447] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.464] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.482] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.504] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.520] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.540] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.560] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.577] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.601] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.620] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.638] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.654] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.671] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.688] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.709] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.728] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.745] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.767] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.783] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.802] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.821] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.839] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.869] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.895] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.919] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:18.939] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:18.958] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:18.982] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:19.000] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:19.019] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:19.036] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:19.061] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:19.083] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:19.105] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:19.121] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:19.139] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:19.156] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:19.173] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:19.190] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:19.212] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:19.228] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:19.248] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:19.267] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:19.285] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:19.308] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:19.325] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[30.05.2026 10:01:19.344] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[30.05.2026 10:01:19.362] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[30.05.2026 10:01:25.612] =========================================================
+[30.05.2026 10:01:25.614] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 10:01:25.636] [BILGI] Secimler -> m_bOlcu: 1, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 10:01:25.653] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 10:01:25.670] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 10:01:25.689] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 10:01:25.707] [BILGI] Arama Tamamlandi! Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 10:01:25.724] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 10:01:25.741] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 10:01:29.891] =========================================================
+[30.05.2026 10:01:29.892] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 10:01:29.908] [BILGI] Secimler -> m_bOlcu: 1, m_bIcRenk: 0, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 10:01:29.930] [BILGI] Secim araligindaki toplam nesne sayisi: 1
+[30.05.2026 10:01:29.951] [BILGI] ActivePage->Shapes->FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 10:01:29.974] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group'), Tip: 0, Recursive: 1
+[30.05.2026 10:01:29.998] [BILGI] Arama Tamamlandi! Sorgu: (@width > 0.167274 and @width < 0.171994) and (@type <> 'group')
+[30.05.2026 10:01:30.025] [BILGI] Eşleşen Nesne Sayısı: 0
+[30.05.2026 10:01:30.046] [BILGI] CQL Sonuc vermedi. COM Tarama yontemi (Alternatif) baslatiliyor...
+[30.05.2026 10:01:30.063] [BILGI] SearchByCOMScan: COM Tarama Islemi Baslatildi. AktifKatman: 0
+[30.05.2026 10:01:30.081] [BILGI] FindShapes cagrisi yapiliyor. Sorgu: , Tip: 0, Recursive: 1
+[30.05.2026 10:01:30.099] [BILGI] SearchByCOMScan: Taranacak toplam sekil sayisi: 24
+[30.05.2026 10:01:30.124] [BILGI] COM Tarama tamamlandi. Eşleşen Nesne Sayısı: 11
+[30.05.2026 10:01:30.142] [BILGI] CreateSelection cagriliyor...
+[30.05.2026 10:24:03.513] =========================================================
+[30.05.2026 10:24:03.515] [TEST] COM Baglantisi ve Metot/Ozellik Testi Baslatildi.
+[30.05.2026 10:24:03.531] [TEST] 1. m_pApp basariyla alindi.
+[30.05.2026 10:24:03.549] [TEST] 2. ActiveDocument basariyla alindi.
+[30.05.2026 10:24:03.566] [TEST] 3. ActiveShape alindi.
+[30.05.2026 10:24:03.585] [TEST] 4a. pDoc->Selection deneniyor...
+[30.05.2026 10:24:03.602] [HATA] GetDispatchProp: Invoke (PROPERTYGET) basarisiz! (Prop: Selection, hr: 0x80020003)
+[30.05.2026 10:24:03.619] [TEST] 4a. pDoc->Selection basarisiz.
+[30.05.2026 10:24:03.636] [TEST] 4b. pDoc->ActiveSelection deneniyor...
+[30.05.2026 10:24:03.652] [HATA] GetDispatchProp: GetIDsOfNames basarisiz! (Prop: ActiveSelection, hr: 0x80020006)
+[30.05.2026 10:24:03.668] [TEST] 4b. pDoc->ActiveSelection basarisiz.
+[30.05.2026 10:24:03.686] [TEST] 4c. m_pApp->ActiveSelection deneniyor...
+[30.05.2026 10:24:03.704] [TEST] 4c. m_pApp->ActiveSelection BASARILI.
+[30.05.2026 10:24:03.723] [TEST] 4d. pDoc->ActiveSelectionRange deneniyor...
+[30.05.2026 10:24:03.741] [HATA] GetDispatchProp: GetIDsOfNames basarisiz! (Prop: ActiveSelectionRange, hr: 0x80020006)
+[30.05.2026 10:24:03.763] [TEST] 4d. pDoc->ActiveSelectionRange basarisiz.
+[30.05.2026 10:24:03.783] [TEST] 4e. m_pApp->ActiveSelectionRange deneniyor...
+[30.05.2026 10:24:03.802] [TEST] 4e. m_pApp->ActiveSelectionRange BASARILI.
+[30.05.2026 10:24:03.822] [TEST] 5a. m_pApp->Evaluate (Basit CQL) deneniyor...
+[30.05.2026 10:24:03.840] [TEST] Evaluate->Evaluate cagrisi basarisiz! hr: 0x80020009
+[30.05.2026 10:24:03.858] [TEST] EXCEPINFO Source: Application
+[30.05.2026 10:24:03.874] [TEST] EXCEPINFO Description: Invalid use of '@type' in the current context at position 1
+[30.05.2026 10:24:03.893] [TEST] EXCEPINFO wCode: 0, scode: 0x80004005
+[30.05.2026 10:24:03.914] [TEST] 5b. pDoc->Evaluate (Basit CQL) deneniyor...
+[30.05.2026 10:24:03.933] [TEST] Evaluate GetIDsOfNames (Evaluate) basarisiz! hr: 0x80020006
+[30.05.2026 10:24:03.951] [TEST] 6. ActivePage alindi.
+[30.05.2026 10:24:03.971] [TEST] 6. ActivePage.Shapes alindi.
+[30.05.2026 10:24:03.989] [TEST] COM Testi Tamamlandi.
+[30.05.2026 10:24:26.538] =========================================================
+[30.05.2026 10:24:26.539] [BILGI] OnBnClickedBtnColor: Renklendirme Islemi Baslatildi.
+[30.05.2026 10:24:26.564] [HATA] SetLongProp: Invoke (PROPERTYPUT) basarisiz! (Prop: Type, hr: 0x8002000E)
+[30.05.2026 10:24:26.608] [BILGI] OnBnClickedBtnColor: Obje basariyla kirmiziya boyandi.
+[30.05.2026 19:37:09.027] =========================================================
+[30.05.2026 19:37:09.046] [TEST] COM Baglantisi ve Metot/Ozellik Testi Baslatildi.
+[30.05.2026 19:37:09.069] [TEST] 1. m_pApp basariyla alindi.
+[30.05.2026 19:37:09.087] [TEST] 2. ActiveDocument basariyla alindi.
+[30.05.2026 19:37:09.103] [TEST] [UYARI] ActiveShape NULL (Nesne secili olmayabilir).
+[30.05.2026 19:37:09.122] [TEST] 4a. pDoc->Selection deneniyor...
+[30.05.2026 19:37:09.139] [HATA] GetDispatchProp: Invoke (PROPERTYGET) basarisiz! (Prop: Selection, hr: 0x80020003)
+[30.05.2026 19:37:09.158] [TEST] 4a. pDoc->Selection basarisiz.
+[30.05.2026 19:37:09.176] [TEST] 4b. pDoc->ActiveSelection deneniyor...
+[30.05.2026 19:37:09.194] [HATA] GetDispatchProp: GetIDsOfNames basarisiz! (Prop: ActiveSelection, hr: 0x80020006)
+[30.05.2026 19:37:09.210] [TEST] 4b. pDoc->ActiveSelection basarisiz.
+[30.05.2026 19:37:09.228] [TEST] 4c. m_pApp->ActiveSelection deneniyor...
+[30.05.2026 19:37:09.248] [TEST] 4c. m_pApp->ActiveSelection BASARILI.
+[30.05.2026 19:37:09.262] [TEST] 4d. pDoc->ActiveSelectionRange deneniyor...
+[30.05.2026 19:37:09.282] [HATA] GetDispatchProp: GetIDsOfNames basarisiz! (Prop: ActiveSelectionRange, hr: 0x80020006)
+[30.05.2026 19:37:09.300] [TEST] 4d. pDoc->ActiveSelectionRange basarisiz.
+[30.05.2026 19:37:09.320] [TEST] 4e. m_pApp->ActiveSelectionRange deneniyor...
+[30.05.2026 19:37:09.342] [TEST] 4e. m_pApp->ActiveSelectionRange BASARILI.
+[30.05.2026 19:37:09.360] [TEST] 5a. m_pApp->Evaluate (Basit CQL) deneniyor...
+[30.05.2026 19:37:09.380] [TEST] Evaluate->Evaluate cagrisi basarisiz! hr: 0x80020009
+[30.05.2026 19:37:09.396] [TEST] EXCEPINFO Source: Application
+[30.05.2026 19:37:09.413] [TEST] EXCEPINFO Description: Invalid use of '@type' in the current context at position 1
+[30.05.2026 19:37:09.431] [TEST] EXCEPINFO wCode: 0, scode: 0x80004005
+[30.05.2026 19:37:09.450] [TEST] 5b. pDoc->Evaluate (Basit CQL) deneniyor...
+[30.05.2026 19:37:09.467] [TEST] Evaluate GetIDsOfNames (Evaluate) basarisiz! hr: 0x80020006
+[30.05.2026 19:37:09.485] [TEST] 6. ActivePage alindi.
+[30.05.2026 19:37:09.500] [TEST] 6. ActivePage.Shapes alindi.
+[30.05.2026 19:37:09.517] [TEST] COM Testi Tamamlandi.
+[30.05.2026 19:37:11.436] =========================================================
+[30.05.2026 19:37:11.437] [BILGI] OnBnClickedBtnAra: Arama Islemi Baslatildi.
+[30.05.2026 19:37:11.454] [BILGI] Secimler -> m_bOlcu: 0, m_bIcRenk: 1, m_bTur: 0, m_bKonturOlcu: 0, m_bKonturRenk: 0, m_bGrupIci: 0, Op: =
+[30.05.2026 19:37:11.471] [HATA] OnBnClickedBtnAra: ActiveShape NULL! Secili nesne yok.
+[30.05.2026 19:48:42.970] =========================================================
+[31.05.2026 06:29:18.502] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.528] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.534] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.553] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.567] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.584] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.601] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.623] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.638] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.654] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.667] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.684] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.701] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.717] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.733] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.754] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.767] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.783] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.804] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.827] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.852] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.869] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.896] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.901] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.933] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:18.951] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:18.966] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:18.984] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:19.000] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:19.018] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:19.033] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:19.051] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:19.066] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:19.085] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:19.100] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:19.107] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:19.133] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:19.151] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:19.168] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:19.184] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:29:19.201] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:29:19.233] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:29:19.256] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:47:35.251] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 06:47:35.257] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBGreen, hr: 0x80020009)
+[31.05.2026 06:47:35.274] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBBlue, hr: 0x80020009)
+[31.05.2026 06:47:35.294] [HATA] GetLongProp: Invoke (PROPERTYGET) basarisiz! (Prop: RGBRed, hr: 0x80020009)
+[31.05.2026 07:02:15.640] [BILGI] Ztrass checkbox: 1
+[31.05.2026 07:02:16.191] [BILGI] Ztrass checkbox: 0
