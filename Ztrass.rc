@@ -1,41 +1,14 @@
-﻿// Microsoft Visual C++ generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
-#include <windows.h>
-#include <commctrl.h>
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
 //
 // Generated from the TEXTINCLUDE 2 resource.
 //
-#ifndef IDC_STATIC
-#define IDC_STATIC          -1
-#endif
-#define DS_SETFONT          0x40L
-#define DS_FIXEDSYS         0x0008L
-#define WS_POPUP            0x80000000L
-#define WS_CHILD            0x40000000L
-#define WS_CAPTION          0x00C00000L
-#define WS_SYSMENU          0x00080000L
-#define WS_THICKFRAME       0x00040000L
-#define WS_TABSTOP          0x00010000L
-#define WS_GROUP            0x00020000L
-#define BS_AUTOCHECKBOX     0x00000003L
-#define BS_AUTORADIOBUTTON  0x00000009L
-#define SS_ICON             0x00000003L
-#define WS_BORDER           0x00800000L
-#define ES_AUTOHSCROLL      0x0080L
-#define WS_MINIMIZEBOX      0x00020000L
-#define WS_MAXIMIZEBOX      0x00010000L
-#define DS_SHELLFONT        (DS_SETFONT | DS_FIXEDSYS)
-#define LANG_TURKISH        0x1f
-#define CBS_DROPDOWN        0x0002L
-#define WS_VSCROLL          0x00200000L
-#define SUBLANG_DEFAULT     0x01
-#ifndef WS_EX_LEFT
-#define WS_EX_LEFT          0x00000000L
-#endif
+#include <windows.h>
+#include <commctrl.h>
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -44,7 +17,7 @@
 // Türkçe (Türkiye) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_TRK)
-LANGUAGE LANG_TURKISH, SUBLANG_DEFAULT
+LANGUAGE 0x1f, 0x01
 #pragma code_page(65001)
 
 /////////////////////////////////////////////////////////////////////////////
@@ -125,7 +98,7 @@ BEGIN
     PUSHBUTTON      "A7",IDC_BTN_ARA12,198,108,27,12
     PUSHBUTTON      "A8",IDC_BTN_ARA13,198,122,27,12
     PUSHBUTTON      "A9",IDC_BTN_ARA14,198,136,27,12
-    GROUPBOX        "Kalıp İşlemleri",IDC_GRP_KALIP_BILGI,237,6,99,148
+    GROUPBOX        "Kalıp İşlemleri",IDC_GRP_KALIP_BILGI,237,6,99,155
     LTEXT           "Firma",IDC_STATIC,242,17,22,8
     COMBOBOX        IDC_EDT_FIRMA,266,15,64,150,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
     LTEXT           "Dosya",IDC_STATIC,242,30,22,8
@@ -191,33 +164,8 @@ END
 
 2 TEXTINCLUDE 
 BEGIN
-    "#ifndef IDC_STATIC\r\n"
-    "#define IDC_STATIC          -1\r\n"
-    "#endif\r\n"
-    "#define DS_SETFONT          0x40L\r\n"
-    "#define DS_FIXEDSYS         0x0008L\r\n"
-    "#define WS_POPUP            0x80000000L\r\n"
-    "#define WS_CHILD            0x40000000L\r\n"
-    "#define WS_CAPTION          0x00C00000L\r\n"
-    "#define WS_SYSMENU          0x00080000L\r\n"
-    "#define WS_THICKFRAME       0x00040000L\r\n"
-    "#define WS_TABSTOP          0x00010000L\r\n"
-    "#define WS_GROUP            0x00020000L\r\n"
-    "#define BS_AUTOCHECKBOX     0x00000003L\r\n"
-    "#define BS_AUTORADIOBUTTON  0x00000009L\r\n"
-    "#define SS_ICON             0x00000003L\r\n"
-    "#define WS_BORDER           0x00800000L\r\n"
-    "#define ES_AUTOHSCROLL      0x0080L\r\n"
-    "#define WS_MINIMIZEBOX      0x00020000L\r\n"
-    "#define WS_MAXIMIZEBOX      0x00010000L\r\n"
-    "#define DS_SHELLFONT        (DS_SETFONT | DS_FIXEDSYS)\r\n"
-    "#define LANG_TURKISH        0x1f\r\n"
-    "#define CBS_DROPDOWN        0x0002L\r\n"
-    "#define WS_VSCROLL          0x00200000L\r\n"
-    "#define SUBLANG_DEFAULT     0x01\r\n"
-    "#ifndef WS_EX_LEFT\r\n"
-    "#define WS_EX_LEFT          0x00000000L\r\n"
-    "#endif\r\n"
+    "#include <windows.h>\r\n"
+    "#include <commctrl.h>\r\n"
     "\0"
 END
 

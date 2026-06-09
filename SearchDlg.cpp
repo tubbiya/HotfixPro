@@ -1,4 +1,4 @@
-#include "SearchDlg.h"
+﻿#include "SearchDlg.h"
 #include <afxdlgs.h>
 #include <thread>
 #include <vector>
@@ -5050,45 +5050,76 @@ void CSearchDlg::OnBnClickedBtnKalipAyir()
                         if (pText) {
                             IDispatch* pStory = GetDispatchProp(pText, L"Story");
                             if (pStory) {
-                                // UI Listesinden ilgili rengin metnini tam olarak çek
-                                CString colorLine = _T("");
-                                for (size_t k = 0; k < m_listObjects.size(); k++) {
-                                    if (m_listObjects[k].color == col) {
-                                        CString tasAdi, tipAdi;
-                                        if (k < m_combosTas.size() && ::IsWindow(m_combosTas[k]->GetSafeHwnd())) {
-                                            m_combosTas[k]->GetWindowText(tasAdi);
+                                CString newText = _T("");
+                                IDispatch* pParagraphs = GetDispatchProp(pStory, L"Paragraphs");
+                                if (pParagraphs) {
+                                    long paraCount = GetLongProp(pParagraphs, L"Count");
+                                    for (long ln = 1; ln <= paraCount; ln++) {
+                                        IDispatch* pPara = GetDispatchPropWithIntArg(pParagraphs, L"Item", ln);
+                                        if (pPara) {
+                                            CString paraText = GetStringProp(pPara, L"Text");
+                                            paraText.Replace(_T("\r"), _T(""));
+                                            paraText.Replace(_T("\n"), _T(""));
+                                            
+                                            bool keepLine = false;
+                                            // Genel döküman ve kalıp üst başlık bilgilerini koru
+                                            if (paraText.Find(_T("ztrass.com")) != -1 || paraText.Find(_T("Dosya:")) != -1 ||
+                                                paraText.Find(_T("Firma:")) != -1 || paraText.Find(_T("Kalıp Adı:")) != -1 ||
+                                                paraText.Find(_T("Kalıp Ölçü:")) != -1 || paraText.Find(_T("Desen Ölçü:")) != -1 ||
+                                                paraText.Find(_T("Kalıptaki İş:")) != -1 || paraText.Find(_T("Toplam İş:")) != -1 ||
+                                                paraText.Find(_T("Renk")) != -1 || paraText.Find(_T(":")) != -1) {
+                                                
+                                                keepLine = true;
+                                                // Eğer "Renk" adedi satırıysa "1 Renk" olarak normalize et
+                                                if (paraText.Find(_T("Renk")) != -1 && paraText.Find(_T("Say")) == -1) {
+                                                    paraText = _T("1 Renk");
+                                                }
+                                            } else {
+                                                // Taş detay satırları: Paragrafın yazı rengini sorgula
+                                                IDispatch* pParaFill = GetDispatchProp(pPara, L"Fill");
+                                                COLORREF lineCol = CLR_INVALID;
+                                                if (pParaFill) {
+                                                    long ft = GetLongProp(pParaFill, L"Type");
+                                                    if (ft == 1) {
+                                                        IDispatch* pColor = GetDispatchProp(pParaFill, L"UniformColor");
+                                                        if (pColor) { lineCol = GetColorRef(pColor); pColor->Release(); }
+                                                    }
+                                                    pParaFill->Release();
+                                                }
+                                                
+                                                if (lineCol != CLR_INVALID) {
+                                                    // Sadece şu an işlenen kalıbın aktif taşına ait satırı tut
+                                                    if (abs(GetRValue(lineCol) - GetRValue(col)) < 15 &&
+                                                        abs(GetGValue(lineCol) - GetGValue(col)) < 15 &&
+                                                        abs(GetBValue(lineCol) - GetBValue(col)) < 15) {
+                                                        keepLine = true;
+                                                    }
+                                                } else {
+                                                    keepLine = true;
+                                                }
+                                            }
+                                            
+                                            if (keepLine && !paraText.IsEmpty()) {
+                                                if (!newText.IsEmpty()) newText += _T("\r");
+                                                newText += paraText;
+                                            }
+                                            pPara->Release();
                                         }
-                                        if (k < m_combosTip.size() && ::IsWindow(m_combosTip[k]->GetSafeHwnd())) {
-                                            m_combosTip[k]->GetWindowText(tipAdi);
-                                        }
-                                        colorLine = m_listObjects[k].text + _T(" - ") + tasAdi + _T(" - ") + tipAdi;
-                                        break;
                                     }
+                                    pParagraphs->Release();
                                 }
-                                // Listede bulunamazsa yedek yapıdan al
-                                if (colorLine.IsEmpty()) {
-                                    if (m_parsedStoneDetails.find(col) != m_parsedStoneDetails.end()) {
-                                        colorLine = m_parsedStoneDetails[col].first + _T(" - ") + m_parsedStoneDetails[col].second;
-                                    } else {
-                                        colorLine = _T("1 Renk");
-                                    }
-                                }
-                                
-                                CString newText = _T("ztrass.com\r") + colorLine;
                                 SetStringProp(pStory, L"Text", (WCHAR*)(const WCHAR*)newText);
                                 pStory->Release();
                             }
                             pText->Release();
                         }
                         
-                        // Metin rengini taşın kendi rengine (col) ayarla
+                        // Metnin ana rengini o kalıbın taş rengine eşitle
                         IDispatch* pDupFill = GetDispatchProp(pDupText, L"Fill");
                         if (pDupFill) {
-                            IDispatch* pColor = nullptr;
-                            VARIANT rCol; VariantInit(&rCol);
+                            IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
                             if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
-                                pColor = rCol.pdispVal;
-                                SetColorRGB(pColor, r, g, b); 
+                                pColor = rCol.pdispVal; SetColorRGB(pColor, r, g, b); 
                                 DISPID dApply; OLECHAR* szApply = (OLECHAR*)L"ApplyUniformFill";
                                 if (SUCCEEDED(pDupFill->GetIDsOfNames(IID_NULL, &szApply, 1, LOCALE_USER_DEFAULT, &dApply))) {
                                     VARIANT argC; VariantInit(&argC); argC.vt = VT_DISPATCH; argC.pdispVal = pColor;
@@ -5100,7 +5131,7 @@ void CSearchDlg::OnBnClickedBtnKalipAyir()
                             pDupFill->Release();
                         }
                         
-                        // Kalıbın sol üst köşesine hizala
+                        // Kalıbın sol üst köşesine güvenli hizala
                         SetDoubleProp(pDupText, L"PositionX", kalipLeft + currentOffset + 3.0);
                         SetDoubleProp(pDupText, L"PositionY", kalipTop - 3.0);
                         pDupText->Release();
@@ -5231,7 +5262,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
         desenMaxY = GetDoubleProp(pSel, L"TopY");
     }
     
-    // Find pKalipKare (largest shape in selection with no area limit)
     IDispatch* pKalipKare = nullptr;
     double maxArea = 0.0;
     double kalipLeft = 0.0, kalipRight = 0.0, kalipBottom = 0.0, kalipTop = 0.0;
@@ -5279,7 +5309,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
     std::vector<IDispatch*> markerShapesOnPage;
     
     if (!pKalipKare && pPage) {
-        // Fallback to page shapes enclosing selection with 15mm tolerance
         IDispatch* pPageShapes = GetDispatchProp(pPage, L"Shapes");
         if (pPageShapes) {
             DISPID dFindAll; OLECHAR* szFindAll = (OLECHAR*)L"FindShapes";
@@ -5344,7 +5373,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
     }
     
     if (pKalipKare && pPage) {
-        // Find non-selected marker shapes on the page inside the mold rectangle
         IDispatch* pPageShapes = GetDispatchProp(pPage, L"Shapes");
         if (pPageShapes) {
             DISPID dFindAll; OLECHAR* szFindAll = (OLECHAR*)L"FindShapes";
@@ -5371,7 +5399,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
                                     bool isInside = (sLeft >= kalipLeft - 10.0 && sRight <= kalipRight + 10.0 &&
                                                      sBottom >= kalipBottom - 10.0 && sTop <= kalipTop + 10.0);
                                     if (isInside) {
-                                        // Check if not a real stone
                                         double w = GetDoubleProp(pShape, L"SizeWidth");
                                         double h = GetDoubleProp(pShape, L"SizeHeight");
                                         long fillType = 0;
@@ -5406,7 +5433,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
         }
     }
     
-    // Create new ShapeRange to combine selection, mold and marker shapes
     IDispatch* pMyRange = nullptr;
     VARIANT rRange; VariantInit(&rRange);
     if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateShapeRange", &rRange)) && rRange.vt == VT_DISPATCH) {
@@ -5416,7 +5442,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
     if (pMyRange) {
         DISPID dAdd; OLECHAR* szAdd = (OLECHAR*)L"Add";
         if (SUCCEEDED(pMyRange->GetIDsOfNames(IID_NULL, &szAdd, 1, LOCALE_USER_DEFAULT, &dAdd))) {
-            // Add selected shapes
             for (long i = 1; i <= flatCount; i++) {
                 IDispatch* pItem = GetDispatchPropWithIntArg(pSelFlat, L"Item", i);
                 if (pItem) {
@@ -5426,7 +5451,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
                     pItem->Release();
                 }
             }
-            // Add pKalipKare
             if (pKalipKare) {
                 bool found = false;
                 long targetID = GetLongProp(pKalipKare, L"StaticID");
@@ -5445,7 +5469,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
                     pMyRange->Invoke(dAdd, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prms, NULL, NULL, NULL);
                 }
             }
-            // Add marker shapes
             for (auto m : markerShapesOnPage) {
                 bool found = false;
                 long targetID = GetLongProp(m, L"StaticID");
@@ -5504,8 +5527,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
         if (pSourceRange->Invoke(dispDup, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &paramsDup, &retDup, NULL, NULL) == S_OK) {
             if (retDup.vt == VT_DISPATCH) {
                 pDupRange = retDup.pdispVal;
-                // UngroupAll returns a new ShapeRange containing all ungrouped shapes.
-                // We update pDupRange with this new pointer.
                 VARIANT rUngroup; VariantInit(&rUngroup);
                 if (SUCCEEDED(InvokeMethodNoArgsRet(pDupRange, L"UngroupAll", &rUngroup)) && rUngroup.vt == VT_DISPATCH) {
                     pDupRange->Release();
@@ -5542,7 +5563,6 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
     }
     long dupFlatCount = GetLongProp(pDupFlatRange, L"Count");
     
-    // Find pDupKalipKare (largest shape in dupFlatRange of any type except text)
     IDispatch* pDupKalipKare = nullptr;
     double maxDupArea = 0.0;
     for (long j = 1; j <= dupFlatCount; j++) {
@@ -5564,19 +5584,10 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
         }
     }
     
-    // --- VIRTUAL SHAPE / AGENT SMITH MİMARİSİ BAŞLANGICI ---
-    
-    // CorelDRAW içerisinde boş bir ShapeRange nesnesi oluşturalım ki işlem sonunda hepsini seçebilelim
-    IDispatch* pTargetRange = nullptr;
-    VARIANT rRng; VariantInit(&rRng);
-    if (SUCCEEDED(InvokeMethodNoArgsRet(pDoc, L"CreateShapeRange", &rRng)) && rRng.vt == VT_DISPATCH) {
-        pTargetRange = rRng.pdispVal;
-    }
-    
-    // Benzersiz Renk ve Boyut kombinasyonları için Master (Agent) objeleri haritada tutacağız
-    std::map<CString, IDispatch*> agentMap;
-    
-    // İşlem bittiğinde silinecek orijinal nesnelerin listesi
+    // --- HIGH-PERFORMANCE VIRTUAL SHAPES / AGENT SMITH MİMARİSİ BAŞLANGICI ---
+    IDispatch* pAgentSmith = nullptr;
+    double currentAgentSize = 0.0;
+    COLORREF currentAgentColor = CLR_INVALID;
     std::vector<IDispatch*> shapesToDelete;
 
     for (long i = 1; i <= dupFlatCount; i++) {
@@ -5587,16 +5598,14 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
         bool isProtected = false;
         if (pDupKalipKare && staticID == GetLongProp(pDupKalipKare, L"StaticID")) isProtected = true;
         
-        // 1. En Dıştaki Kalıp Dörtgenini (Çerçeve) Aynen Koru ve Siyah Yap
+        // 1. Kalıp dörtgenini aynen koru ve Siyah yap
         if (isProtected) {
             IDispatch* pOutline = GetDispatchProp(pShape, L"Outline");
             if (pOutline) {
-                SetDoubleProp(pOutline, L"Width", 0.2); // Çizici kafası için ideal kalınlık
-                IDispatch* pColor = nullptr;
-                VARIANT rCol; VariantInit(&rCol);
+                SetDoubleProp(pOutline, L"Width", 0.2);
+                IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
                 if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
-                    pColor = rCol.pdispVal; 
-                    SetColorRGB(pColor, 0, 0, 0); // Saf Siyah Kontür
+                    pColor = rCol.pdispVal; SetColorRGB(pColor, 0, 0, 0); 
                     DISPID dCopy; OLECHAR* szCopy = (OLECHAR*)L"CopyAssign";
                     IDispatch* pOutColor = GetDispatchProp(pOutline, L"Color");
                     if (pOutColor && SUCCEEDED(pOutColor->GetIDsOfNames(IID_NULL, &szCopy, 1, LOCALE_USER_DEFAULT, &dCopy))) {
@@ -5604,34 +5613,21 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
                         DISPPARAMS prmsC = { &argC, NULL, 1, 0 };
                         pOutColor->Invoke(dCopy, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsC, NULL, NULL, NULL);
                     }
-                    if (pOutColor) pOutColor->Release();
-                    pColor->Release();
+                    if (pOutColor) pOutColor->Release(); pColor->Release();
                 }
                 pOutline->Release();
-            }
-            // Bu kareyi makine kalıbı seçim aralığına ekle
-            if (pTargetRange) {
-                DISPID dAdd; OLECHAR* szAdd = (OLECHAR*)L"Add";
-                if (SUCCEEDED(pTargetRange->GetIDsOfNames(IID_NULL, &szAdd, 1, LOCALE_USER_DEFAULT, &dAdd))) {
-                    VARIANT argS; VariantInit(&argS); argS.vt = VT_DISPATCH; argS.pdispVal = pShape;
-                    DISPPARAMS prmsS = { &argS, NULL, 1, 0 };
-                    pTargetRange->Invoke(dAdd, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsS, NULL, NULL, NULL);
-                }
             }
             pShape->Release();
             continue;
         }
         
         long type = GetLongProp(pShape, L"Type");
-        if (type == 6) { pShape->Release(); continue; } // Grup konteynerlerini atla
-        
-        // 2. Sol Üstteki Bilgi Yazısı Seçilmiş Bile Olsa Tamamen Yoksay ve Silme Listesine Al
-        if (type == 8) { 
+        if (type == 6) { pShape->Release(); continue; } // Grup konteynerini geç
+        if (type == 8) { // Sol üstteki yazıları tamamen görme ve imha listesine al
             shapesToDelete.push_back(pShape); 
             continue; 
         }
         
-        // --- Orijinal Taşın Pozisyon, Boyut ve Renk Bilgilerini Çek ---
         double origW = GetDoubleProp(pShape, L"SizeWidth");
         double cx = GetDoubleProp(pShape, L"CenterX");
         double cy = GetDoubleProp(pShape, L"CenterY");
@@ -5640,13 +5636,13 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
         IDispatch* pFill = GetDispatchProp(pShape, L"Fill");
         if (pFill) {
             long ft = GetLongProp(pFill, L"Type");
-            if (ft == 1) { // Uniform dolgu
+            if (ft == 1) {
                 IDispatch* pColor = GetDispatchProp(pFill, L"UniformColor");
                 if (pColor) { origCol = GetColorRef(pColor); pColor->Release(); }
             }
             pFill->Release();
         }
-        if (origCol == CLR_INVALID) { // Dolgusu yoksa çizgi rengine bak
+        if (origCol == CLR_INVALID) {
             IDispatch* pOutline = GetDispatchProp(pShape, L"Outline");
             if (pOutline) {
                 long ot = GetLongProp(pOutline, L"Type");
@@ -5657,9 +5653,8 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
                 pOutline->Release();
             }
         }
-        if (origCol == CLR_INVALID) origCol = RGB(0, 0, 0); // Bulunamazsa yedek siyah
+        if (origCol == CLR_INVALID) origCol = RGB(0, 0, 0);
 
-        // Makine tablosundaki karşılık gelen hedef ölçüyü bul
         double newSize = minSize;
         double bestDiff = 9999.0;
         for (int t = 0; t < tableSize; t++) {
@@ -5671,20 +5666,10 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
         }
         if (newSize < minSize) newSize = minSize;
 
-        // Benzersiz bir Anahtar (Key) oluştur: Renk_R_G_B_Boyut
-        CString key;
-        key.Format(L"%d_%d_%d_%.3f", GetRValue(origCol), GetGValue(origCol), GetBValue(origCol), newSize);
-
-        IDispatch* pAgentSmith = nullptr;
-        
-        // 3. EĞER BU ÖZELLİKLERDE BİR MASTER YOKSA OLUŞTUR VE GRUPLA
-        if (agentMap.find(key) == agentMap.end()) {
+        // 2. İlk objeyi daireye çevir ve Agent Smith yap
+        if (!pAgentSmith) {
             IDispatch* pActiveLayer = GetDispatchProp(pDoc, L"ActiveLayer");
             if (pActiveLayer) {
-                IDispatch* pMasterBase = nullptr;
-                IDispatch* pMasterDot = nullptr;
-                
-                // 3a. ANA DAİRE (Kendi renginde)
                 VARIANT args[4];
                 args[3].vt = VT_R8; args[3].dblVal = cx - newSize / 2.0; 
                 args[2].vt = VT_R8; args[2].dblVal = cy + newSize / 2.0; 
@@ -5695,185 +5680,113 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
                 DISPID dCreate; OLECHAR* szCreate = (OLECHAR*)L"CreateEllipse";
                 if (SUCCEEDED(pActiveLayer->GetIDsOfNames(IID_NULL, &szCreate, 1, LOCALE_USER_DEFAULT, &dCreate))) {
                     if (SUCCEEDED(pActiveLayer->Invoke(dCreate, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prms, &rEllipse, NULL, NULL))) {
-                        pMasterBase = rEllipse.pdispVal;
+                        pAgentSmith = rEllipse.pdispVal;
                     }
                 }
-                
-                // 3b. ORTA NOKTA (Küçük Siyah Daire, 0.5 mm çapında)
-                double dotSize = 0.5;
-                VARIANT argsDot[4];
-                argsDot[3].vt = VT_R8; argsDot[3].dblVal = cx - dotSize / 2.0; 
-                argsDot[2].vt = VT_R8; argsDot[2].dblVal = cy + dotSize / 2.0; 
-                argsDot[1].vt = VT_R8; argsDot[1].dblVal = cx + dotSize / 2.0; 
-                argsDot[0].vt = VT_R8; argsDot[0].dblVal = cy - dotSize / 2.0; 
-                DISPPARAMS prmsDot = { argsDot, NULL, 4, 0 };
-                VARIANT rDot; VariantInit(&rDot);
-                if (SUCCEEDED(pActiveLayer->GetIDsOfNames(IID_NULL, &szCreate, 1, LOCALE_USER_DEFAULT, &dCreate))) {
-                    if (SUCCEEDED(pActiveLayer->Invoke(dCreate, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsDot, &rDot, NULL, NULL))) {
-                        pMasterDot = rDot.pdispVal;
-                    }
-                }
-                
-                // --- MasterBase Renklendirmesi ---
-                if (pMasterBase) {
-                    IDispatch* pFillNew = GetDispatchProp(pMasterBase, L"Fill");
-                    if (pFillNew) {
-                        IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
-                        if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
-                            pColor = rCol.pdispVal; SetColorRGB(pColor, GetRValue(origCol), GetGValue(origCol), GetBValue(origCol));
-                            DISPID dApply; OLECHAR* szApply = (OLECHAR*)L"ApplyUniformFill";
-                            if (SUCCEEDED(pFillNew->GetIDsOfNames(IID_NULL, &szApply, 1, LOCALE_USER_DEFAULT, &dApply))) {
-                                VARIANT argC; VariantInit(&argC); argC.vt = VT_DISPATCH; argC.pdispVal = pColor;
-                                DISPPARAMS prmsC = { &argC, NULL, 1, 0 }; pFillNew->Invoke(dApply, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsC, NULL, NULL, NULL);
-                            }
-                            pColor->Release();
-                        }
-                        pFillNew->Release();
-                    }
-                    
-                    IDispatch* pOutline = GetDispatchProp(pMasterBase, L"Outline");
-                    if (pOutline) {
-                        SetDoubleProp(pOutline, L"Width", 0.1);
-                        IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
-                        if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
-                            pColor = rCol.pdispVal; SetColorRGB(pColor, 0, 0, 0); 
-                            DISPID dCopy; OLECHAR* szCopy = (OLECHAR*)L"CopyAssign";
-                            IDispatch* pOutColor = GetDispatchProp(pOutline, L"Color");
-                            if (pOutColor && SUCCEEDED(pOutColor->GetIDsOfNames(IID_NULL, &szCopy, 1, LOCALE_USER_DEFAULT, &dCopy))) {
-                                VARIANT argC; VariantInit(&argC); argC.vt = VT_DISPATCH; argC.pdispVal = pColor;
-                                DISPPARAMS prmsC = { &argC, NULL, 1, 0 }; pOutColor->Invoke(dCopy, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsC, NULL, NULL, NULL);
-                            }
-                            if (pOutColor) pOutColor->Release(); pColor->Release();
-                        }
-                        pOutline->Release();
-                    }
-                }
-
-                // --- MasterDot Renklendirmesi (Saf Siyah ve Kenarlıksız) ---
-                if (pMasterDot) {
-                    IDispatch* pFillNew = GetDispatchProp(pMasterDot, L"Fill");
-                    if (pFillNew) {
-                        IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
-                        if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
-                            pColor = rCol.pdispVal; SetColorRGB(pColor, 0, 0, 0);
-                            DISPID dApply; OLECHAR* szApply = (OLECHAR*)L"ApplyUniformFill";
-                            if (SUCCEEDED(pFillNew->GetIDsOfNames(IID_NULL, &szApply, 1, LOCALE_USER_DEFAULT, &dApply))) {
-                                VARIANT argC; VariantInit(&argC); argC.vt = VT_DISPATCH; argC.pdispVal = pColor;
-                                DISPPARAMS prmsC = { &argC, NULL, 1, 0 }; pFillNew->Invoke(dApply, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsC, NULL, NULL, NULL);
-                            }
-                            pColor->Release();
-                        }
-                        pFillNew->Release();
-                    }
-                    IDispatch* pOutline = GetDispatchProp(pMasterDot, L"Outline");
-                    if (pOutline) {
-                        SetDoubleProp(pOutline, L"Width", 0.0);
-                        pOutline->Release();
-                    }
-                }
-                
-                // 3c. MasterBase ve MasterDot'u grupla (ShapeRange ile)
-                IDispatch* pTmpRange = nullptr;
-                VARIANT rRngTmp; VariantInit(&rRngTmp);
-                if (SUCCEEDED(InvokeMethodNoArgsRet(pDoc, L"CreateShapeRange", &rRngTmp)) && rRngTmp.vt == VT_DISPATCH) {
-                    pTmpRange = rRngTmp.pdispVal;
-                    DISPID dAdd; OLECHAR* szAdd = (OLECHAR*)L"Add";
-                    if (SUCCEEDED(pTmpRange->GetIDsOfNames(IID_NULL, &szAdd, 1, LOCALE_USER_DEFAULT, &dAdd))) {
-                        if (pMasterBase) {
-                            VARIANT argS; VariantInit(&argS); argS.vt = VT_DISPATCH; argS.pdispVal = pMasterBase;
-                            DISPPARAMS prmsS = { &argS, NULL, 1, 0 };
-                            pTmpRange->Invoke(dAdd, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsS, NULL, NULL, NULL);
-                        }
-                        if (pMasterDot) {
-                            VARIANT argS; VariantInit(&argS); argS.vt = VT_DISPATCH; argS.pdispVal = pMasterDot;
-                            DISPPARAMS prmsS = { &argS, NULL, 1, 0 };
-                            pTmpRange->Invoke(dAdd, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsS, NULL, NULL, NULL);
-                        }
-                    }
-                    
-                    VARIANT rGroup; VariantInit(&rGroup);
-                    if (SUCCEEDED(InvokeMethodNoArgsRet(pTmpRange, L"Group", &rGroup)) && rGroup.vt == VT_DISPATCH) {
-                        pAgentSmith = rGroup.pdispVal;
-                    }
-                    pTmpRange->Release();
-                }
-                
-                if (pMasterBase) pMasterBase->Release();
-                if (pMasterDot) pMasterDot->Release();
                 pActiveLayer->Release();
             }
             
             if (pAgentSmith) {
-                agentMap[key] = pAgentSmith;
-                // İlk taş olarak sahneye çizildi, seçim menziline ekleyelim
-                if (pTargetRange) {
-                    DISPID dAdd; OLECHAR* szAdd = (OLECHAR*)L"Add";
-                    if (SUCCEEDED(pTargetRange->GetIDsOfNames(IID_NULL, &szAdd, 1, LOCALE_USER_DEFAULT, &dAdd))) {
-                        VARIANT argS; VariantInit(&argS); argS.vt = VT_DISPATCH; argS.pdispVal = pAgentSmith;
-                        DISPPARAMS prmsS = { &argS, NULL, 1, 0 };
-                        pTargetRange->Invoke(dAdd, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsS, NULL, NULL, NULL);
+                currentAgentSize = newSize;
+                currentAgentColor = origCol;
+                
+                IDispatch* pFillNew = GetDispatchProp(pAgentSmith, L"Fill");
+                if (pFillNew) {
+                    IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
+                    if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
+                        pColor = rCol.pdispVal; SetColorRGB(pColor, GetRValue(origCol), GetGValue(origCol), GetBValue(origCol));
+                        DISPID dApply; OLECHAR* szApply = (OLECHAR*)L"ApplyUniformFill";
+                        if (SUCCEEDED(pFillNew->GetIDsOfNames(IID_NULL, &szApply, 1, LOCALE_USER_DEFAULT, &dApply))) {
+                            VARIANT argC; VariantInit(&argC); argC.vt = VT_DISPATCH; argC.pdispVal = pColor;
+                            DISPPARAMS prmsC = { &argC, NULL, 1, 0 }; pFillNew->Invoke(dApply, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsC, NULL, NULL, NULL);
+                        }
+                        pColor->Release();
                     }
+                    pFillNew->Release();
+                }
+                
+                IDispatch* pOutline = GetDispatchProp(pAgentSmith, L"Outline");
+                if (pOutline) {
+                    SetDoubleProp(pOutline, L"Width", 0.1);
+                    IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
+                    if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
+                        pColor = rCol.pdispVal; SetColorRGB(pColor, 0, 0, 0); 
+                        DISPID dCopy; OLECHAR* szCopy = (OLECHAR*)L"CopyAssign";
+                        IDispatch* pOutColor = GetDispatchProp(pOutline, L"Color");
+                        if (pOutColor && SUCCEEDED(pOutColor->GetIDsOfNames(IID_NULL, &szCopy, 1, LOCALE_USER_DEFAULT, &dCopy))) {
+                            VARIANT argC; VariantInit(&argC); argC.vt = VT_DISPATCH; argC.pdispVal = pColor;
+                            DISPPARAMS prmsC = { &argC, NULL, 1, 0 }; pOutColor->Invoke(dCopy, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsC, NULL, NULL, NULL);
+                        }
+                        if (pOutColor) pOutColor->Release(); pColor->Release();
+                    }
+                    pOutline->Release();
                 }
             }
-            
             shapesToDelete.push_back(pShape);
             continue; 
-        } else {
-            pAgentSmith = agentMap[key];
         }
 
-        // 4. EĞER MASTER ZATEN VARSA TREENODE İLE HIZLICA KLONLA VE YERLEŞTİR
-        if (pAgentSmith) {
-            IDispatch* pAgentNode = GetDispatchProp(pAgentSmith, L"TreeNode");
-            if (pAgentNode) {
-                VARIANT rCopyNode; VariantInit(&rCopyNode);
-                if (SUCCEEDED(InvokeMethodNoArgsRet(pAgentNode, L"GetCopy", &rCopyNode)) && rCopyNode.vt == VT_DISPATCH) {
-                    IDispatch* pCopyNode = rCopyNode.pdispVal;
-                    
-                    // Sanal kopyanın merkez koordinatlarını hedef taşın yerine taşıyoruz
-                    IDispatch* pVirtualShape = GetDispatchProp(pCopyNode, L"VirtualShape");
-                    if (pVirtualShape) {
-                        SetDoubleProp(pVirtualShape, L"CenterX", cx);
-                        SetDoubleProp(pVirtualShape, L"CenterY", cy);
-                        
-                        // Kopyayı seçim listesine ekle
-                        if (pTargetRange) {
-                            DISPID dAdd; OLECHAR* szAdd = (OLECHAR*)L"Add";
-                            if (SUCCEEDED(pTargetRange->GetIDsOfNames(IID_NULL, &szAdd, 1, LOCALE_USER_DEFAULT, &dAdd))) {
-                                VARIANT argS; VariantInit(&argS); argS.vt = VT_DISPATCH; argS.pdispVal = pVirtualShape;
-                                DISPPARAMS prmsS = { &argS, NULL, 1, 0 };
-                                pTargetRange->Invoke(dAdd, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsS, NULL, NULL, NULL);
-                            }
-                        }
-                        pVirtualShape->Release();
+        // 3. Ölçü değişirse sıradaki dairenin ölçüsünü değiştir
+        if (fabs(currentAgentSize - newSize) > 0.001) {
+            SetDoubleProp(pAgentSmith, L"SizeWidth", newSize);
+            SetDoubleProp(pAgentSmith, L"SizeHeight", newSize);
+            currentAgentSize = newSize;
+        }
+        
+        // 4. Renk değişirse geçerli dairenin rengini değiştir ve geçerli daire olarak onu al
+        if (currentAgentColor != origCol) {
+            IDispatch* pFillNew = GetDispatchProp(pAgentSmith, L"Fill");
+            if (pFillNew) {
+                IDispatch* pColor = nullptr; VARIANT rCol; VariantInit(&rCol);
+                if (SUCCEEDED(InvokeMethodNoArgsRet(m_pApp, L"CreateColor", &rCol)) && rCol.vt == VT_DISPATCH) {
+                    pColor = rCol.pdispVal; SetColorRGB(pColor, GetRValue(origCol), GetGValue(origCol), GetBValue(origCol));
+                    DISPID dApply; OLECHAR* szApply = (OLECHAR*)L"ApplyUniformFill";
+                    if (SUCCEEDED(pFillNew->GetIDsOfNames(IID_NULL, &szApply, 1, LOCALE_USER_DEFAULT, &dApply))) {
+                        VARIANT argC; VariantInit(&argC); argC.vt = VT_DISPATCH; argC.pdispVal = pColor;
+                        DISPPARAMS prmsC = { &argC, NULL, 1, 0 }; pFillNew->Invoke(dApply, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsC, NULL, NULL, NULL);
                     }
-                    
-                    // Katman ağacına (DOM) ekle ve sahneye bağla
-                    IDispatch* pTargetLayer = GetDispatchProp(pShape, L"Layer");
-                    if (pTargetLayer) {
-                        IDispatch* pLayerNode = GetDispatchProp(pTargetLayer, L"TreeNode");
-                        if (pLayerNode) {
-                            DISPID dLink; OLECHAR* szLink = (OLECHAR*)L"LinkAsChildOf";
-                            if (SUCCEEDED(pCopyNode->GetIDsOfNames(IID_NULL, &szLink, 1, LOCALE_USER_DEFAULT, &dLink))) {
-                                VARIANT argLink; VariantInit(&argLink); argLink.vt = VT_DISPATCH; argLink.pdispVal = pLayerNode;
-                                DISPPARAMS prmsLink = { &argLink, NULL, 1, 0 };
-                                pCopyNode->Invoke(dLink, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsLink, NULL, NULL, NULL);
-                            }
-                            pLayerNode->Release();
-                        }
-                        pTargetLayer->Release();
-                    }
-                    pCopyNode->Release();
+                    pColor->Release();
                 }
-                pAgentNode->Release();
+                pFillNew->Release();
             }
+            currentAgentColor = origCol;
         }
 
-        // Orijinal taşları döngü bitiminde toplu imha etmek için listeye ekle
+        // 5. TreeNode sanal kopyalama API'si ile kopyala bas
+        IDispatch* pAgentNode = GetDispatchProp(pAgentSmith, L"TreeNode");
+        if (pAgentNode) {
+            VARIANT rCopyNode; VariantInit(&rCopyNode);
+            if (SUCCEEDED(InvokeMethodNoArgsRet(pAgentNode, L"GetCopy", &rCopyNode)) && rCopyNode.vt == VT_DISPATCH) {
+                IDispatch* pCopyNode = rCopyNode.pdispVal;
+                IDispatch* pVirtualShape = GetDispatchProp(pCopyNode, L"VirtualShape");
+                if (pVirtualShape) {
+                    SetDoubleProp(pVirtualShape, L"CenterX", cx);
+                    SetDoubleProp(pVirtualShape, L"CenterY", cy);
+                    pVirtualShape->Release();
+                }
+                
+                IDispatch* pTargetLayer = GetDispatchProp(pShape, L"Layer");
+                if (pTargetLayer) {
+                    IDispatch* pLayerNode = GetDispatchProp(pTargetLayer, L"TreeNode");
+                    if (pLayerNode) {
+                        DISPID dLink; OLECHAR* szLink = (OLECHAR*)L"LinkAsChildOf";
+                        if (SUCCEEDED(pCopyNode->GetIDsOfNames(IID_NULL, &szLink, 1, LOCALE_USER_DEFAULT, &dLink))) {
+                            VARIANT argLink; VariantInit(&argLink); argLink.vt = VT_DISPATCH; argLink.pdispVal = pLayerNode;
+                            DISPPARAMS prmsLink = { &argLink, NULL, 1, 0 };
+                            pCopyNode->Invoke(dLink, IID_NULL, LOCALE_USER_DEFAULT, DISPATCH_METHOD, &prmsLink, NULL, NULL, NULL);
+                        }
+                        pLayerNode->Release();
+                    }
+                    pTargetLayer->Release();
+                }
+                pCopyNode->Release();
+            }
+            pAgentNode->Release();
+        }
         shapesToDelete.push_back(pShape);
     }
     
-    // 5. Orijinal Seçili Eski Nesneleri Sahneden Güvenle Kaldır (Evaporate)
+    // Orijinal objeleri topluca temizle (Evaporate)
     for (size_t i = 0; i < shapesToDelete.size(); i++) {
         DISPID dispidDelete; OLECHAR* szDelete = (OLECHAR*)L"Delete";
         if (SUCCEEDED(shapesToDelete[i]->GetIDsOfNames(IID_NULL, &szDelete, 1, LOCALE_USER_DEFAULT, &dispidDelete))) {
@@ -5884,27 +5797,16 @@ void CSearchDlg::OnBnClickedBtnMakineKalibi()
     }
     shapesToDelete.clear();
     
-    // Tüm Master nesneleri haritadan temizle (Referansları serbest bırak)
-    for (auto const& pair : agentMap) {
-        pair.second->Release();
-    }
-    agentMap.clear();
-
-    // 6. En Son Tüm Oluşturulan Nesneleri (Dış Kalıp Dahil) Seç (CreateSelection)
-    if (pTargetRange) {
-        InvokeMethodNoArgs(pTargetRange, L"CreateSelection");
-        pTargetRange->Release();
-    }
+    if (pAgentSmith) pAgentSmith->Release();
     // --- VIRTUAL SHAPE MİMARİSİ BİTİŞİ ---
-    
+
+    InvokeMethodNoArgs(pDupRange, L"CreateSelection");
     pDupFlatRange->Release();
     pDupRange->Release();
     if (pMyRange) pMyRange->Release();
-    
     if (pDupKalipKare) pDupKalipKare->Release();
     if (pKalipKare) pKalipKare->Release();
     for (auto m : markerShapesOnPage) m->Release();
-    
     pSelFlat->Release();
     pSel->Release();
     pDoc->Release();
